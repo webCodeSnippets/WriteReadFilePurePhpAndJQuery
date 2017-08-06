@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <title>Example</title>
+        <script src="jquery-3.2.1.min.js"></script>
+    </head>
+
+    <body>
+        <script>
+            $(document).ready(function() {
+                var url = 'http://localhost:8080/StatusMazmorra/read_status.php';
+                var params = {};
+                
+                httpGetRequest(url, params, function(responseData) {
+                    console.log(JSON.parse(responseData));
+                });
+            });
+
+            function httpGetRequest(url, params, callback) {
+                $.get(
+                    url,
+                    params,
+                    callback
+                );
+            }
+        </script>
+    </body>
+</html>
+

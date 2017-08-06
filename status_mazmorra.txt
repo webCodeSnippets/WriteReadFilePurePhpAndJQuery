@@ -1,0 +1,1 @@
+{"hola":"holamundo","adios":"adiosmundo","array":[1,2,3,4],"object":{"sola":"solamundo","sdios":"sdiosmundo"}}

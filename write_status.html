@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <title>Example</title>
+        <script src="jquery-3.2.1.min.js"></script>
+    </head>
+
+    <body>
+        <script>
+            $(document).ready(function() {
+                 var json = {
+                    hola: 'holamundo',
+                    adios: 'adiosmundo',
+                    array: [1, 2, 3, 4],
+                    object: {
+                        sola: 'solamundo',
+                        sdios: 'sdiosmundo'
+                    }
+                };
+
+                var url = 'http://localhost:8080/StatusMazmorra/write_status.php';
+
+                var params = {
+                    status_json: JSON.stringify(json)
+                };
+                
+                httpGetRequest(url, params, function(responseData) {
+                    console.log(responseData);
+                });
+            });
+
+            function httpGetRequest(url, params, callback) {
+                $.get(
+                    url,
+                    params,
+                    callback
+                );
+            }
+        </script>
+    </body>
+</html>
